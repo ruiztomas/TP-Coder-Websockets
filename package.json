@@ -1,0 +1,26 @@
+{
+  "name": "tp-coder-websockets",
+  "version": "1.0.0",
+  "description": "\"# TP Coder Websockets\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruiztomas/TP-Coder-Websockets.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ruiztomas/TP-Coder-Websockets/issues"
+  },
+  "homepage": "https://github.com/ruiztomas/TP-Coder-Websockets#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.2",
+    "socket.io": "^4.8.1"
+  }
+}
