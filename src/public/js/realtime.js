@@ -3,13 +3,19 @@ const socket=io();
 const productForm=document.getElementById('productForm');
 const productList=document.getElementById('productList');
 
-productForm.addEventListener('submit', (e)=>{
+productForm.addEventListener('submit', async(e)=>{
     e.preventDefault();
     
     const title=document.getElementById('title').value;
     const price=document.getElementById('price').value;
 
-    socket.emit('addProduct', {id:Date.now().toString(), title, price});
+    await fetch('/api/product',{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({title, price})
+    });
 
     productForm.reset();
 });
@@ -25,6 +31,8 @@ socket.on('updateProducts', (products)=>{
     });
 });
 
-function deleteProduct(id){
-    socket.emit('deleteProduct', id);
+async function deleteProduct(id){
+    await fetch(`/api/product/${id}`,{
+        method: 'DELETE'
+    });    
 }
